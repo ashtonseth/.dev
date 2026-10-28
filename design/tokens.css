@@ -1,0 +1,121 @@
+/* ashtonseth design tokens v1.2.0, do not edit per-site; see DESIGN-STANDARD.md */
+:root {
+  color-scheme: light dark;
+
+  /* Light (default) */
+  --bg: #F4F8FF;
+  --surface: #FBFDFF;
+  --surface-2: #EAF2FF;
+  --border: #CBDCF2;
+  --text: #102A43;
+  --text-muted: #4C6580;
+  --brand: #1F5FD6;
+  --brand-hover: #174BAD;
+  --on-brand: #FBFDFF;
+  --secondary: #40658A;
+  --secondary-hover: #31516F;
+  --on-secondary: #FBFDFF;
+  --secondary-soft: #E8F0F8;
+  --tertiary: #173B63;
+  --tertiary-hover: #102C4B;
+  --on-tertiary: #FBFDFF;
+  --tertiary-soft: #E2EBF5;
+  --accent: #0067A3;
+  --accent-hover: #005282;
+  --on-accent: #FBFDFF;
+  --accent-soft: #E0F2FF;
+  --accent-secondary: #D7E7FF;
+  --accent-secondary-hover: #C1DBFF;
+  --on-accent-secondary: #173B63;
+  --success: var(--secondary);
+  --warning: #8A5A00;
+  --warning-hover: #704900;
+  --on-warning: #FFFBF0;
+  --warning-soft: #FFF2CC;
+  --danger: #C42B2B;
+  --danger-hover: #A62222;
+  --on-danger: #FFF7F7;
+  --danger-soft: #FDE8E8;
+  --shadow: 0 1px 2px rgb(16 42 67 / 0.06), 0 4px 12px rgb(16 42 67 / 0.06);
+}
+
+/* Dark by system preference, unless the user forced light */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1422;
+    --surface: #111F33;
+    --surface-2: #192B44;
+    --border: #304A6A;
+    --text: #E1EDFF;
+    --text-muted: #9EB6D3;
+    --brand: #6EA2FF;
+    --brand-hover: #8DB7FF;
+    --on-brand: #0B1422;
+    --secondary: #93B4D6;
+    --secondary-hover: #B2CBE5;
+    --on-secondary: #0B1422;
+    --secondary-soft: #1B304A;
+    --tertiary: #AEC4DF;
+    --tertiary-hover: #CBDAEE;
+    --on-tertiary: #0B1422;
+    --tertiary-soft: #203650;
+    --accent: #63C7FF;
+    --accent-hover: #94DAFF;
+    --on-accent: #0B1422;
+    --accent-soft: #10324B;
+    --accent-secondary: #233F66;
+    --accent-secondary-hover: #2B4F7C;
+    --on-accent-secondary: #D7E7FF;
+    --success: var(--secondary);
+    --warning: #F0B24A;
+    --warning-hover: #FFD06A;
+    --on-warning: #241A00;
+    --warning-soft: #382B12;
+    --danger: #FF7B7B;
+    --danger-hover: #FF9B9B;
+    --on-danger: #2C0B0E;
+    --danger-soft: #3A1B22;
+    --shadow: 0 0 0 1px rgb(174 196 223 / 0.08);
+  }
+}
+
+/* Dark forced by the user */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0B1422;
+  --surface: #111F33;
+  --surface-2: #192B44;
+  --border: #304A6A;
+  --text: #E1EDFF;
+  --text-muted: #9EB6D3;
+  --brand: #6EA2FF;
+  --brand-hover: #8DB7FF;
+  --on-brand: #0B1422;
+  --secondary: #93B4D6;
+  --secondary-hover: #B2CBE5;
+  --on-secondary: #0B1422;
+  --secondary-soft: #1B304A;
+  --tertiary: #AEC4DF;
+  --tertiary-hover: #CBDAEE;
+  --on-tertiary: #0B1422;
+  --tertiary-soft: #203650;
+  --accent: #63C7FF;
+  --accent-hover: #94DAFF;
+  --on-accent: #0B1422;
+  --accent-soft: #10324B;
+  --accent-secondary: #233F66;
+  --accent-secondary-hover: #2B4F7C;
+  --on-accent-secondary: #D7E7FF;
+  --success: var(--secondary);
+  --warning: #F0B24A;
+  --warning-hover: #FFD06A;
+  --on-warning: #241A00;
+  --warning-soft: #382B12;
+  --danger: #FF7B7B;
+  --danger-hover: #FF9B9B;
+  --on-danger: #2C0B0E;
+  --danger-soft: #3A1B22;
+  --shadow: 0 0 0 1px rgb(174 196 223 / 0.08);
+}
+
+:root[data-theme="light"] { color-scheme: light; }

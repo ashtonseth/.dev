@@ -1,0 +1,133 @@
+/* Shared ashtonseth.dev sticky utility header; manifest contract v1.0.0, Design Standard 2.10.0. */
+html {
+  --domain-header-height: calc(12rem + env(safe-area-inset-top));
+  scroll-padding-block-start: calc(var(--domain-header-height) + 12px);
+}
+/* Keep the first keyboard destination visible above the sticky component. */
+.skip-link { position: fixed; z-index: 20; }
+.domain-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+.domain-header .domain-header__inner {
+  box-sizing: border-box;
+  inline-size: min(calc(100% - 2 * var(--space-4)), 72rem);
+  max-inline-size: 72rem;
+  min-inline-size: 0;
+  margin-inline: auto;
+}
+.domain-header__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "brand theme" "nav nav";
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  padding-block: max(var(--space-1), env(safe-area-inset-top)) var(--space-1);
+  font-size: var(--step--1);
+}
+.domain-header__brand {
+  grid-area: brand;
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  min-width: 0;
+  min-height: 32px;
+  color: var(--text);
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.domain-header__brand:hover { color: var(--brand); }
+.domain-header__nav { grid-area: nav; min-width: 0; }
+.domain-header__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.domain-header__item { min-width: 0; max-width: 100%; }
+.domain-header__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+  max-width: 100%;
+  padding: var(--space-1) var(--space-2);
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  background: transparent;
+  box-shadow: none;
+  font: 500 var(--step--1)/1.4 var(--font-sans);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.domain-header__link:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+.domain-header__link[aria-current="location"] { background: var(--surface-2); }
+.domain-header__link[aria-current="location"] {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+.domain-header__brand[aria-current="location"] { font-weight: 700; }
+.domain-header__theme { grid-area: theme; display: flex; justify-content: flex-end; }
+.domain-header__theme > button {
+  position: static;
+  inset: auto;
+  margin: 0;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+.domain-header__theme > button:hover {
+  background: var(--surface-2);
+}
+.domain-header__theme > button > svg { display: block; flex: none; width: 20px; height: 20px; }
+.domain-header__theme > button:focus-visible { border-radius: 2px; }
+.domain-header a:focus-visible, .domain-header button:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 1px;
+}
+@media (min-width: 48rem) {
+  html { --domain-header-height: calc(6rem + env(safe-area-inset-top)); }
+  .domain-header__inner {
+    grid-template-columns: max-content minmax(0, 1fr) auto;
+    grid-template-areas: "brand nav theme";
+  }
+  .domain-header__list { justify-content: flex-end; }
+}
+@media (prefers-contrast: more) {
+  .domain-header { border-bottom-width: 2px; }
+}
+@media (forced-colors: active) {
+  .domain-header { border-color: CanvasText; }
+  .domain-header__theme > button { color: ButtonText; }
+  .domain-header a:focus-visible, .domain-header button:focus-visible { outline-color: Highlight; }
+}
