@@ -42,7 +42,7 @@ html {
   border: 0;
   background: transparent;
   box-shadow: none;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
   overflow-wrap: anywhere;
 }
@@ -84,7 +84,6 @@ html {
   text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
 }
-.domain-header__brand[aria-current="location"] { font-weight: 700; }
 .domain-header__theme { grid-area: theme; display: flex; justify-content: flex-end; }
 .domain-header__theme > button {
   position: static;
